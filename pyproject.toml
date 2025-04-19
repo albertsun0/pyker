@@ -1,7 +1,7 @@
 [project]
 name = "pyker"
 version = "0.1.0"
-description = "Add your description here"
+description = "poker lib in python"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
