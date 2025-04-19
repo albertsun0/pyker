@@ -4,4 +4,6 @@ version = "0.1.0"
 description = "poker lib in python"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pdoc>=15.0.2",
+]
