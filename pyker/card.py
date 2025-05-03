@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import Enum, auto, IntEnum
 
 SUIT_DISPLAY_TEXT = {
     "CLUB": "♣",
@@ -8,11 +8,11 @@ SUIT_DISPLAY_TEXT = {
 }
 
 
-class Suit(Enum):
-    CLUB = auto()
-    DIAMOND = auto()
-    HEART = auto()
-    SPADE = auto()
+class Suit(IntEnum):
+    CLUB = 0
+    DIAMOND = 1
+    HEART = 2
+    SPADE = 3
 
     def __str__(self):
         return SUIT_DISPLAY_TEXT[self.name]
@@ -35,7 +35,7 @@ RANK_DISPLAY_TEXT = {
 }
 
 
-class Rank(Enum):
+class Rank(IntEnum):
     ACE = 14
     TWO = 2
     THREE = 3
@@ -61,3 +61,7 @@ class Card:
 
     def __str__(self):
         return f"{self.rank}{self.suit}"
+
+    def __lt__(self, other):
+        # return if self is smaller than other
+        return (self.rank, self.suit) < (other.rank, other.suit)
